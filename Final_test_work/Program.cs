@@ -23,7 +23,7 @@ string[] ArrayCreationFromInitialArray(int symbolsQuantity, string[] inputArray,
     {
         if (inputArray[i].Length <= symbolsQuantity)
         {
-            outputArray[count] = initialArray[i];
+            outputArray[count] = inputArray[i];
             count++;
         }
     }
