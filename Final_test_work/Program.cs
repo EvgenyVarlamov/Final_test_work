@@ -1,6 +1,10 @@
-﻿string[] initialArray = { "Написать", "программу", ",", "которая", "из", "имеющегося", "массива", "строк", "формирует",
-                          "массив", "из", "строк", ",", "длина", "которых", "меньше", "либо", "равна", "3", "символа" };
-int arrayElementSize = 3;
+﻿string[] ArrayInput(string message)
+{
+    Console.Write(message);
+    string input = Console.ReadLine() + "";
+    string[] array = input.Split(" ").ToArray();
+    return array;
+}
 
 int ArrayLengthCalculation(int symbolsQuantity, string[] inputArray)
 {
@@ -38,10 +42,13 @@ string PrintArray(string message, string[] inputArray)
     {
         output += $"'{inputArray[i]}' ";
     }
-    output += " ]";
+    output += "]";
     return output;
 }
 
+int arrayElementSize = 3;
+
+string[] initialArray = ArrayInput("Введите элементы массива через пробел: ");
 int arrayLength = ArrayLengthCalculation(arrayElementSize, initialArray);
 string[] targetArray = ArrayCreationFromInitialArray(arrayElementSize, initialArray, arrayLength);
 Console.WriteLine(PrintArray("Исходный массив: ", initialArray));
